@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Mobile Cowpi</string>
+    <string name="title_activity_contact_list">ContactListActivity</string>
+    <string name="action_perf">Performance Test</string>
+    <string name="run_perf">Run Perf Tests</string>
+</resources>

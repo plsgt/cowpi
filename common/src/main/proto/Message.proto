@@ -1,0 +1,44 @@
+syntax="proto3";
+
+option java_package = "net.cowpi.protobuf";
+option java_outer_classname = "MessageProto";
+
+
+
+message CowpiMessage {
+    enum MessageType {
+        UNKNOWN = 0;
+        SETUP = 1;
+        RECIEPT = 2;
+        CONVERSATION = 3;
+        PARTICIPANT_UPDATE = 4;
+    }
+
+    int64 conversation_id = 1;
+    string author = 2;
+    int64 prevIndex = 3;
+    int64 index = 4;
+    bytes ciphertext = 5;
+    repeated string participant = 6;
+    map<string, ParticipantData> participant_data = 7;
+    map<string, OesCiphertext> oes_data = 8;
+    MessageType type = 9;
+}
+
+message ParticipantData {
+    int64 key_id = 2;
+    bytes eph_key = 3;
+    bytes ciphertext = 4;
+}
+
+message OesCiphertext {
+    int64 key_id = 2;
+    bytes eph_key = 3;
+    bytes longterm_key = 4;
+    bytes ciphertext = 5;
+}
+
+message OesPlaintext {
+    int64 key_id = 1;
+    bytes eph_key = 2;
+}

@@ -1,0 +1,17 @@
+syntax="proto3";
+
+option java_package = "net.cowpi.protobuf";
+option java_outer_classname = "ServerProtos";
+
+import "User.proto";
+import "Message.proto";
+import "Oes.proto";
+
+message ServerContainer {
+    int32 id = 1;
+    oneof inner {
+        UserContainer user_container = 2;
+        CowpiMessage cowpi_message = 3;
+        OesContainer oes_container = 4;
+    }
+}

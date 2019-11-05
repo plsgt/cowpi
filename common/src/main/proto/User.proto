@@ -1,0 +1,26 @@
+syntax="proto3";
+
+option java_package = "net.cowpi.protobuf";
+option java_outer_classname = "UserProtos";
+
+message UserContainer {
+    oneof inner {
+        UploadPrekey upload_prekey = 1;
+        FetchPrekey fetch_prekey = 2;
+    }
+}
+
+message UploadPrekey {
+    repeated PreKey prekey = 1;
+}
+
+message FetchPrekey {
+    repeated string users = 1;
+    map<string, PreKey> keys = 2;
+    map<string, PreKey> oes_keys = 3;
+}
+
+message PreKey {
+    int64 key_id = 1;
+    bytes prekey = 2;
+}

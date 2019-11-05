@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: net.cowpi:common:1.0-SNAPSHOT@jar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.m2/repository/net/cowpi/common/1.0-SNAPSHOT/common-1.0-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,22 @@
+oesName: "oes_1"
+
+clientPoolSize: 5
+
+longtermPrivateKey: "78f73fbeb3151fe0161ada920883a9afe6cd53c301766aaa8170321a18584b75"
+longtermPublicKey: "6b7389a4cffe45c77b0001193565c75f76ae89121393b8d5b32088efa8fa1a5d"
+
+routerName: "router"
+routerLongtermPublicKey: "0ae7f364cc7bb20f17425be69d2852a25e414271401e00cdc1ba5eff36b22c25"
+routerAddress: "localhost"
+routerPort: 9091
+
+messageQueueSize: 1000
+messageQueueThreads: 4
+
+database:
+  username: "cowpi"
+  password: "LetMeInNow"
+  server: "localhost"
+  port: "5432"
+  name: "cowpi"
+  schema: "oes_1"

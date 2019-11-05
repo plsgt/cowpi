@@ -1,0 +1,50 @@
+syntax="proto3";
+
+option java_package = "net.cowpi.protobuf";
+option java_outer_classname = "CiphertextProto";
+
+import "Server.proto";
+
+message CiphertextContainer {
+    oneof inner {
+        RegisterUser register_user = 1;
+        VerifyUser verify_user = 2;
+        Login login = 3;
+
+        Ciphertext ciphertext = 4;
+
+        OesLogin oes_login = 8;
+    }
+}
+
+message RegisterUser {
+    string username = 1;
+    bytes longterm_key = 2;
+    bool success = 3;
+}
+
+message VerifyUser {
+    string username = 1;
+    bool success = 2;
+}
+
+message Login {
+    string username = 1;
+    bytes ephmeral_public_key = 2;
+}
+
+message OesLogin {
+    string oes_name = 1;
+    bytes ephemral_public_key = 2;
+}
+
+message Ciphertext {
+    int64 key_id = 1;
+    bytes ciphertext = 2;
+}
+
+message Plaintext {
+    ServerContainer inner = 1;
+    int64 next_key_id = 2;
+    bytes next_pub_key = 3;
+}

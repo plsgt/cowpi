@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_perf"
+        android:title="@string/action_perf"
+        app:showAsAction="never"
+        android:visible="true"/>
+
+</menu>

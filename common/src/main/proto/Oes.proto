@@ -1,0 +1,23 @@
+syntax="proto3";
+
+option java_package = "net.cowpi.protobuf";
+option java_outer_classname = "OesProto";
+
+import "Message.proto";
+
+message OesContainer {
+    oneof inner {
+        OesUploadPrekeys oes_upload_prekeys = 1;
+        CowpiMessage cowpi_message = 2;
+    }
+}
+
+message OesUploadPrekeys {
+    int32 prekeyCount = 1;
+    repeated OesPreKey oes_prekey = 2;
+}
+
+message OesPreKey {
+    int64 key_id = 1;
+    bytes public_key = 2;
+}
